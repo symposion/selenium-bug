@@ -33,10 +33,10 @@ public class SeleniumAttributeBugTest {
                     .navigate()
                     .to(new URL("file:///test.html"));
 
-            var attribute = driver.findElement(By.id("test")).getAttribute("href");
+            var property = driver.findElement(By.id("test")).getDomProperty("href");
             var domAttribute = driver.findElement(By.id("test")).getDomAttribute("href");
 
-            assertThat(attribute, equalTo(domAttribute));
+            assertThat(property, equalTo(domAttribute));
 
         }
         finally {
